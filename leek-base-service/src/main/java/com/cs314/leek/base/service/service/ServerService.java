@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-public class ServerTimeService {
+public class ServerService {
     /**
      * 获取服务器时间
      *
