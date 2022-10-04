@@ -4,3 +4,38 @@ project:
 server:
   port: 8080
 
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/leek?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    druid:
+      initial-size: 3
+      min-idle: 5
+      max-active: 10
+      max-wait: 30000
+      # sql 监控
+      filters: stat,wall
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        enabled: true
+        reset-enable: false
+        login-password: druid
+        login-username: druid123
+        allow: 127.0.0.1
+      filter:
+        stat:
+          log-slow-sql: true
+    schema:
+      - classpath:initsql/*
+    initialization-mode: always
+    sql-script-encoding: UTF-8
+
+mybatis:
+  mapper-locations: classpath:sql/*.xml
+
