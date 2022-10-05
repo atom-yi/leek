@@ -3,6 +3,8 @@ project:
 
 server:
   port: 8080
+  servlet:
+    context-path: /leek
 
 spring:
   datasource:
@@ -39,3 +41,13 @@ spring:
 mybatis:
   mapper-locations: classpath:sql/*.xml
 
+minio:
+  endpoint: http://127.0.0.1:9000
+  account: root
+  password: Changeme_123456
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread][%level][%logger{50}]>>>%msg%n"

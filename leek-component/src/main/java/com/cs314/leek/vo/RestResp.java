@@ -3,9 +3,11 @@ package com.cs314.leek.vo;
 import com.cs314.leek.enums.HttpStatus;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class RestResp<T> {
     private int code;
     private String message;
@@ -54,5 +56,27 @@ public class RestResp<T> {
     public static RestResp<Void> defaultSuccess() {
         RestResp<Void> restResp = new RestResp<>();
         return restResp.success();
+    }
+
+    /**
+     * 生成默认失败请求
+     *
+     * @param errMsg 错误信息
+     * @return 请求失败
+     */
+    public static RestResp<Void> defaultFailed(String errMsg) {
+        RestResp<Void> restResp = new RestResp<>();
+        return restResp.failed(errMsg);
+    }
+
+    /**
+     * 成功返回数据
+     *
+     * @return 成功返回数据
+     */
+    public static <T> RestResp<T> successWithData(T data) {
+        RestResp<T> restResp = new RestResp<>();
+        restResp.success(data);
+        return restResp;
     }
 }

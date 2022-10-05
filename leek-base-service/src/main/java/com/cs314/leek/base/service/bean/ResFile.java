@@ -1,12 +1,14 @@
 package com.cs314.leek.base.service.bean;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResFile {
-    private String path;
+    private String filepath;
     private long updateTime;
     private long expireTime;
 }

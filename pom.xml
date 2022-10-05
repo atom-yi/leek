@@ -25,6 +25,8 @@
         <mysql.connect.version>8.0.16</mysql.connect.version>
         <druid.version>1.1.22</druid.version>
         <guava.version>29.0-jre</guava.version>
+        <commons.lang3.version>3.10</commons.lang3.version>
+        <fastjson.version>1.2.75</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -53,6 +55,16 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <!-- minio -->
